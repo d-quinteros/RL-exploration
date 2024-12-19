@@ -60,3 +60,23 @@ In Q-learning, state-action value functions are used, which is why we refer to t
 This function is the core of Q-learning. I initially tried to explain it with written content and visuals, but the visuals were better suited for a video, so I decided to scrap that approach. Instead, I recommend watching this short [<sup>9-minute clip</sup>]([https://www.youtube.com/watch?v=lfPEJPHUllg&list=PLTl9hO2Oobd9kS--NgVz0EPNyEmygV1Ha&index=1](https://youtu.be/TiAXhVAZQl8?si=XblpvYOAIfi6DTCs&t=197)) for a high-level overview of how the function works.
 
 ## My Implementation
+
+I implemented the Q-learning algorithm using an environment provided by OpenAI Gym known as "MountainCar-v0". The environment initializes with a car stuck between two hills. The goal is for the car to reach the top of the right hill, but there's a catch: the car doesn’t have enough power to just drive up. It needs to build momentum by moving back and forth between the hills, using the downhill speed to eventually reach the top.
+
+The state includes the car’s position and its velocity, while the car can choose from three actions: apply a small force to the left, do nothing, or apply a small force to the right.
+
+There were two main challenges when implementing the Q-learning algorithm for this application:
+<ol>
+  <li>Converting the continuous observation space into discrete values</li>
+  <li>Representing the Q-table with multiple states (position and velocity)</li>
+</ol>
+
+To convert the continuous observation space into discrete values, I broke the continuous ranges of position and velocity into smaller, evenly spaced intervals
+
+First, I set up discrete bins for each dimension of the state (position and velocity). The position of the car ranges from -1.2 to 0.6, and the velocity ranges from -0.07 to 0.07. These ranges were divided into 20 equal bins for each dimension.
+
+For each new state (position and velocity), I calculated which bin the current value fell into. So, if the position was, say, 0.3, I figured out which of the 20 bins it belonged to, and did the same for velocity. This gave me a discrete representation of the state.
+
+The result was a tuple of two numbers representing the discrete positions for both the car’s position and velocity. This tuple is then used to look up values in the Q-table, where each state-action pair has its own Q-value.
+
+The second challenge was relatively simple. Most beginner-friendly explanations of Q-learning introduce the concept of a Q-table (as shown in the video from earlier), which lists the Q-values for each state-action pair. However, since the MountainCar-v0 environment has two state variables (position and velocity), the Q-table needed to be expanded. Instead of a 2D Q-table, I created a 3D Q-table, with the first two dimensions representing the combination of discrete positions and velocities. The third dimension corresponds to the different possible actions the agent can take. This way, each combination of state and action has its own Q-value, allowing the agent to learn which actions are best for each specific state.
