@@ -48,3 +48,7 @@ Policy-based methods, on the other hand, skip the value calculations and focus o
 
 Since Q-learning is a value-based approach, let’s take a closer look at how value-based methods work.
 ![Screenshot (121)](https://github.com/user-attachments/assets/b4de98a6-fbf5-4656-bf67-d4461a21bb9d)
+
+Value-based methods use a value function to determine the policy that maximizes the total reward. The value function takes inputs and produces a score based on them. The specific inputs depend on the type of value function being used: the **state value function** or the **state-action value function**.
+
+State value functions take the current state of the agent and output a numerical score that answers the question, "How good is it to be in this state?" On the other hand, state-action value functions take both the current state and the action the agent performs, outputting a numerical score known as a "q-value." This q-value answers the question, "How good is it to be in this state and take this specific action?"
