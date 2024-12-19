@@ -47,3 +47,4 @@ In value-based methods, the goal is to estimate the value of different actions o
 Policy-based methods, on the other hand, skip the value calculations and focus on learning the policy itself. Instead of estimating rewards for each action, the algorithm directly works on figuring out the best actions to take in any situation.
 
 Since Q-learning is a value-based approach, let’s take a closer look at how value-based methods work.
+![Screenshot (121)](https://github.com/user-attachments/assets/b4de98a6-fbf5-4656-bf67-d4461a21bb9d)
