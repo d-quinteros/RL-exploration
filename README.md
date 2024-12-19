@@ -52,3 +52,11 @@ Since Q-learning is a value-based approach, let’s take a closer look at how va
 Value-based methods use a value function to determine the policy that maximizes the total reward. The value function takes inputs and produces a score based on them. The specific inputs depend on the type of value function being used: the **state value function** or the **state-action value function**.
 
 State value functions take the current state of the agent and output a numerical score that answers the question, "How good is it to be in this state?" On the other hand, state-action value functions take both the current state and the action the agent performs, outputting a numerical score known as a "q-value." This q-value answers the question, "How good is it to be in this state and take this specific action?"
+
+In Q-learning, state-action value functions are used, which is why we refer to the value as a "q-value."
+
+[INSERT IMAGE HERE]
+
+This function is the core of Q-learning. I initially tried to explain it with written content and visuals, but the visuals were better suited for a video, so I decided to scrap that approach. Instead, I recommend watching this short [<sup>9-minute clip</sup>]([https://www.youtube.com/watch?v=lfPEJPHUllg&list=PLTl9hO2Oobd9kS--NgVz0EPNyEmygV1Ha&index=1](https://youtu.be/TiAXhVAZQl8?si=XblpvYOAIfi6DTCs&t=197)) for a high-level overview of how the function works.
+
+## My Implementation
