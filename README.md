@@ -34,4 +34,16 @@ So, what makes a policy "good," and how do we go about developing one? A good po
 
 ![Screenshot (120)](https://github.com/user-attachments/assets/5313e218-c289-4612-9d8a-c5f27fc58ad7)
 
+Let’s say we want to do 1,000 plays on the slot machines. Looking at the probabilities of a payout, we’d probably stick with slot machine #2 for all 1,000 plays. But that’s because we already know the probabilities of success. What if we didn’t?
 
+If we didn’t know the probabilities, we could try playing each slot machine 250 times to gather some data. However, this approach wouldn’t necessarily result in the best possible outcome because we’d spend too much time on less promising machines. Instead, we need a strategy that balances exploration (trying different machines to learn about their payouts) and exploitation (focusing on the machine that seems to perform the best so far).
+
+This balance is crucial in reinforcement learning because it helps the agent gather enough information to make good decisions without wasting resources on less-optimal choices.
+
+Now that we have an idea of what a good policy is and a general understanding of how to develop one, let’s talk about the two main ways policies are used in reinforcement learning algorithms: **value-based** and **policy-based**.
+
+In value-based methods, the goal is to estimate the value of different actions or states to figure out the best policy. Basically, these methods calculate how much reward you can expect by taking a specific action in a given state, and then they use those values to decide what to do. The policy isn’t directly learned; it’s based on these value estimates.
+
+Policy-based methods, on the other hand, skip the value calculations and focus on learning the policy itself. Instead of estimating rewards for each action, the algorithm directly works on figuring out the best actions to take in any situation.
+
+Since Q-learning is a value-based approach, let’s take a closer look at how value-based methods work.
