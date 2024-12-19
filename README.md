@@ -14,12 +14,24 @@
 
 ![Markov_diagram_v2](https://github.com/user-attachments/assets/eaee46e6-3d67-4a74-bf0f-21e19db2347d)
 
-This is the Agent-Environment interaction loop which is the core of many RL problems. The Agent does some action and interacts with the environment. The Environment returns a state and a reward, which will be used by the Agent to determine its next action.
+This is the Agent-Environment interaction loop which is the core of many RL problems. The **Agent** does some **action** and interacts with the **environment**. The Environment returns a **state** and a **reward**, which will be used by the Agent to determine its next action.
 
 Think about driving a car. In the agent-environment loop, a driver (agent) observes the traffic and road conditions (environment) as they drive. They take actions such as steering or braking to navigate through traffic (action). As a result, they see how the car responds and how the traffic changes (new state). If their actions are appropriate for their situation, like braking at a red light, they can eventually reach their destination safely (reward).
 
-But how does the agent know what to do when in a particular state? That has to do with the concept of "policy."
+But how does the agent know what to do when in a particular state? That has to do with the concept of **policy**.
 
 ![Screenshot (118)](https://github.com/user-attachments/assets/9a5f9bab-7acb-4fd1-b3bc-dd35cbd2e1d7)
 
-The policy determines how the agent should behave in a certain situation.
+The policy determines how the agent should behave in a certain situation. Reinforcement learning uses two approaches to develop policies: **on-policy** and **off-policy**.  
+
+In on-policy methods, the agent learns and improves the same policy it's using to make decisions. This means the agent directly learns from its own actions and experiences in the environment.
+
+Off-policy methods are a bit different. Here, the agent learns one policy while possibly behaving according to a different one. This allows it to explore the environment in one way while still figuring out the best actions for a potentially better strategy.
+
+(Note: We will be using the Q-learning algorithm, which is off-policy, so we will be diving deeper into off-policy.)
+
+So, what makes a policy "good," and how do we go about developing one? A good policy is one that maximizes the total reward accumulated over a given time period. Let's take a trip to the casino.
+
+![Screenshot (120)](https://github.com/user-attachments/assets/5313e218-c289-4612-9d8a-c5f27fc58ad7)
+
+
